@@ -1,8 +1,9 @@
-export default function product({title,price}){
+export default function product({id,title,price}){
     return(
-        <div>
+        <div className="border-2  border-blue-500 m-3 p-3">
             <h2>{title}</h2>
             <p>{price}</p>
+            <ProductButton id={id}/>
         </div>
     )
 }

@@ -13,7 +13,7 @@ export default async function Products(){
         {
             products.length>0 && (
                 products.map(({id,title,price }) =>(
-                    <Product key={id} title={title} price={price}/>
+                    <Product key={id} id={id} title={title} price={price}/>
                  ))
             )
             
