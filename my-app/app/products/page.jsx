@@ -9,11 +9,14 @@ export default async function Products(){
     console.log({products});
     return(
         <>
-        <h1>hello world</h1>
+        <h1 className="font-bold text-3xl text-amber-950 m-3">Products List</h1>
         {
             products.length>0 && (
                 products.map(({id,title,price }) =>(
-                    <Product key={id} id={id} title={title} price={price}/>
+                    <Product key={id} 
+                                id={id} 
+                                title={title} 
+                                price={price}/>
                  ))
             )
             

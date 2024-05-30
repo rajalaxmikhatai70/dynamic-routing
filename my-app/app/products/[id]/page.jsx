@@ -19,6 +19,7 @@ export default async function productPage({params}){
     const product = await getProduct(params.id)
     console.log({product});
     return(
-        <Product title = {product.title} price={product.price}/>
+        <Product title = {product.title} 
+                 price={product.price}/>
     )
 }
