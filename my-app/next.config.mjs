@@ -1,4 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    images: {
+      minimumCacheTTL: 30,
+      remotePatterns: [
+        {
+          hostname: "firebasestorage.googleapis.com",
+          protocol: "https",
+        },
+      ],
+    },
+  
+    
+  };
+  
+  export default nextConfig;
+  
