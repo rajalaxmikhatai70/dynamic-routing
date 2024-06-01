@@ -1,14 +1,6 @@
 import Product from "@/app/components/product";
 import Image from "next/image";
-export async function generateStaticParams(){
-    const res = await fetch('https://dummyjson.com/products?limit=10&skip=10&select=title,price')
-    const data = await res.json()
 
-
-    return data.products.map((product) =>({
-        id:product.id.toString(),
-    }))
-}
 
 async function getProduct(id){
     const res = await fetch(`https://propickproperty.in/backend/todays_news_web/${id}`)
@@ -48,7 +40,7 @@ export default async function productPage({searchParams}){
                     hour: "numeric",
                     minute: "numeric",
                     hour12: true,
-                    timeZone: "Asia/Kolkata", // Specify the desired time zone
+                    timeZone: "Asia/Kolkata", 
                   };
 
                   const postedAt = new Date(article?.posted_at);
