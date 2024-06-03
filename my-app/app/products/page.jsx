@@ -10,9 +10,12 @@ export default async function Products() {
   const products = await getProducts();
   // console.log({products}, 'pp');
   return (
-    <div className="flex flex-col">
+    <div className="bg-gray-300">
+    
+      <h1 className="font-bold text-3xl text-amber-950 m-3 text-center pt-2 pb-2"> Todays Updated News </h1>
       
-      <h1 className="font-bold text-3xl text-amber-950 m-3 text-center pt-2"> Todays Updated News </h1>
+    <div className="text-black gap-2 grid grid-cols-2 mb-2 w-1/2 justify-center ml-[25%]">
+      
       {products.length > 0 &&
         products.map((item, index) => {
           console.log(item);            
@@ -32,6 +35,7 @@ export default async function Products() {
           )
          
         })}
+    </div>
     </div>
   );
 }
