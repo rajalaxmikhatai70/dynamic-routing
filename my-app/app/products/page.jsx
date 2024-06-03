@@ -10,9 +10,9 @@ export default async function Products() {
   const products = await getProducts();
   // console.log({products}, 'pp');
   return (
-    <div>
+    <div className="flex flex-col">
       
-      <h1 className="font-bold text-3xl text-amber-950 m-3 text-center pt-2"> Todays Updated All News </h1>
+      <h1 className="font-bold text-3xl text-amber-950 m-3 text-center pt-2"> Todays Updated News </h1>
       {products.length > 0 &&
         products.map((item, index) => {
           console.log(item);            

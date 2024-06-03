@@ -16,7 +16,7 @@ export default async function productPage({searchParams}){
          <div className="font-bold text-center text-black text-4xl mt-3">
             <h1 >{article?.title}</h1>
             </div>
-            <div className="mt-3 p-8 justify-self-center">
+            <div className="mt-3 p-8 ">
             <Image
             src={article?.image}
             width={900}
@@ -26,12 +26,12 @@ export default async function productPage({searchParams}){
             loading="eager"
             quality={20}
             /></div>
-            
-            <div className=" text-black items-end">
-                <p>{article?.author}</p>
+            <div className="ml-[50%]">
+            <div className="text-black font-bold">
+                <p>Author:<span className="text-red-700 font-bold">{article?.author}</span> </p>
             </div>
 
-            <div>
+            <div className="font-bold">
                 {(() => {
                   const options = {
                     year: "numeric",
@@ -47,11 +47,11 @@ export default async function productPage({searchParams}){
                   return postedAt.toLocaleString("en-US", options);
                 })()}
              </div>
-
-            <div>
-                {article?.categories}
+             </div>
+            <div className="mr-[60%] text-2xl text-red-700 font-bold">
+                #{article?.categories}
             </div>
-            <div className="text-gray-800 text-lg font-medium font-sans text-justify m-4 w-2/3" >
+            <div className=" text-lg font-medium font-sans text-justify m-4 w-2/3" >
                 <p className="">{article?.content}</p>
             
      

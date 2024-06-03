@@ -3,15 +3,16 @@ import Image from "next/image";
 export default function Product({item}){
     
     return(
-        <div className="bg-slate-500 w-[100%] flex-1 ">
+        <div className="text-black gap-4 grid grid-cols-2 mb-2   h-fit ">
 
-        <div className="border-2  border-blue-500 m-3 p-3 ">
-         <p>{item?.title}</p>
+        <div className="m-3 p-3 border-2 border-black rounded-md bg-slate-400">
+
+         <p className="font-bold text-center">{item?.title}</p>
          
     <Image
       src={item.image}
       alt="Thumbnail"
-      className="w-full h-auto object-cover px-1 rounded-xl"
+      className="w-full h-auto object-cover px-1 rounded-md"
       width={400}
       height={300}
       loading="eager"
