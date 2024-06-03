@@ -19,14 +19,16 @@ export default async function productPage({searchParams}){
             <div className="mt-3 p-8 ">
             <Image
             src={article?.image}
-            width={900}
-            height={800}
+            width={650}
+            height={450}
             alt={`${article?.title}`}
             className="rounded-lg"
             loading="eager"
             quality={20}
-            /></div>
-            <div className="ml-[50%]">
+            />
+            </div>
+            <div className="ml-[35%]">
+                <div className="">
             <div className="text-black font-bold">
                 <p>Author:<span className="text-red-700 font-bold">{article?.author}</span> </p>
             </div>
@@ -48,10 +50,11 @@ export default async function productPage({searchParams}){
                 })()}
              </div>
              </div>
-            <div className="mr-[60%] text-2xl text-red-700 font-bold">
+             </div>
+            <div className="mr-[35%] text-2xl text-red-700 font-bold">
                 #{article?.categories}
             </div>
-            <div className=" text-lg font-medium font-sans text-justify m-4 w-2/3" >
+            <div className=" text-lg font-medium font-sans text-justify m-4 w-1/2" >
                 <p className="">{article?.content}</p>
             
      

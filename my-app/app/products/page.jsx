@@ -14,7 +14,7 @@ export default async function Products() {
     
       <h1 className="font-bold text-3xl text-amber-950 m-3 text-center pt-2 pb-2"> Todays Updated News </h1>
       
-    <div className="text-black gap-2 grid grid-cols-2 mb-2 w-1/2 justify-center ml-[25%]">
+    <div className="text-black gap-2 grid grid-cols-3 mb-2 w-2/3 justify-center ml-[20%]">
       
       {products.length > 0 &&
         products.map((item, index) => {
@@ -28,6 +28,7 @@ export default async function Products() {
                 ?.slice(0, -2)}`,
               query: { id: item.id },
             }}>
+              
           <Product item={item} 
                    key={index}
           /></Link>
