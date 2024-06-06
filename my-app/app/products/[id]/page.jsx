@@ -13,27 +13,28 @@ export default async function productPage({searchParams}){
     console.log(searchParams);
     return(
         <div className="flex  flex-col justify-center items-center">
-         <div className="font-bold text-center text-black text-4xl mt-3">
+         <div className="font-bold text-start text-black text-4xl mt-3 w-1/2">
             <h1 >{article?.title}</h1>
             </div>
             <div className="mt-3 p-8 ">
             <Image
             src={article?.image}
-            width={650}
-            height={450}
+            width={680}
+            height={480}
             alt={`${article?.title}`}
             className="rounded-lg"
             loading="eager"
             quality={20}
             />
             </div>
-            <div className="ml-[35%]">
-                <div className="">
+            <div className="flex flex-1 justify-between w-[50%]">
+            <div className="text-2xl text-red-700 font-bold">
+                #{article?.categories}  </div>
+          
+               
             <div className="text-black font-bold">
                 <p>Author:<span className="text-red-700 font-bold">{article?.author}</span> </p>
-            </div>
 
-            <div className="font-bold">
                 {(() => {
                   const options = {
                     year: "numeric",
@@ -47,17 +48,13 @@ export default async function productPage({searchParams}){
 
                   const postedAt = new Date(article?.posted_at);
                   return postedAt.toLocaleString("en-US", options);
-                })()}
+                })()} 
+                </div>
+
              </div>
-             </div>
-             </div>
-            <div className="mr-[35%] text-2xl text-red-700 font-bold">
-                #{article?.categories}
-            </div>
-            <div className=" text-lg font-medium font-sans text-justify m-4 w-1/2" >
+           
+            <div className="text-lg font-medium font-sans text-justify m-4 w-1/2" >
                 <p className="">{article?.content}</p>
-            
-     
             </div>
          </div>
      

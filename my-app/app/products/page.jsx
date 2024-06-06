@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Product from "../components/Product";
 async function getProducts() {
-  const res = await fetch("https://propickproperty.in/backend/todays_news_web");
+  const res = await fetch("https://propickproperty.in/backend/todays_news_web",{next:{revalidate:10}});
   const data = await res.json();
   // console.log(data)
   return data.posts;
@@ -12,7 +12,7 @@ export default async function Products() {
   return (
     <div className="bg-gray-300">
     
-      <h1 className="font-bold text-3xl text-amber-950 m-3 text-center pt-2 pb-2"> Todays Updated News </h1>
+      <h1 className="font-bold text-3xl text-amber-950 m-3 text-center pt-2 pb-2"> The Quiver News</h1>
       
     <div className="text-black gap-2 grid grid-cols-3 mb-2 w-2/3 justify-center ml-[20%]">
       
@@ -31,6 +31,7 @@ export default async function Products() {
               
           <Product item={item} 
                    key={index}
+
           /></Link>
           
           )
